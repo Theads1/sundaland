@@ -1,9 +1,10 @@
-
+import "./sales.css"
 const Sales = () => {
   return (
     <div className="salesContainer">
-      mf sale bih
+        <p>TRY! select accounts can enjoy 50% off one item. Automatic at checkout.</p>
     </div>
+
   )
 }
 

@@ -1,4 +1,27 @@
 .salesContainer{
-    height: 30px;
-    background-color: #00ba58;
+    font-family: 'Concert One', cursive;
+    height: 50px;	
+    overflow: hidden;
+    position: relative;
+    background: black;
+    color: orange;
+    border: 1px solid orange;
+}
+.salesContainer p{
+position: absolute;
+ width: 100%;
+ height: 100%;
+ margin: 0;
+ line-height: 50px;
+ text-align: center;
+ transform:translateX(100%);
+ animation: scroll-left 18s linear infinite;
+}
+@keyframes scroll-left{
+        0%   {
+        transform: translateX(100%); 		
+        }
+        100% {
+        transform: translateX(-100%); 
+        }
 }
