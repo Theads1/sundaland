@@ -10,7 +10,7 @@ const Central = () => {
        <figure className="cInfo">
         <h1 className="cTitle"> Scary Deals</h1>
         <p className="cDesc">...for the whole family </p>
-        <button className="cshop"> Shop now</button>
+        <button className="cshop"> Shop All</button>
 
        </figure>
 
