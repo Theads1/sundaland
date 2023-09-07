@@ -7,12 +7,12 @@ const Central = () => {
        <figure className="cImage">
         <img src={lantern} className="jacko"/>
        </figure>
-       <section className="cInfo">
+       <figure className="cInfo">
         <h1 className="cTitle"> Scary Deals</h1>
         <p className="cDesc">...for the whole family </p>
         <button className="cshop"> Shop now</button>
 
-       </section>
+       </figure>
 
       </article>
     </main>
