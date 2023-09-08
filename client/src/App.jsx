@@ -1,6 +1,9 @@
 // import { useState } from 'react'
 
-import Login from "./components/user/Login";
+import Details from "./pages/Details";
+
+
+// import Login from "./components/user/Login";
 // import Register from "./components/user/Register";
 
 // import Home from "./pages/Home";
@@ -15,7 +18,8 @@ function App() {
       {/* <Home/> */}
       {/* <Products/> */}
       {/* <Register/> */}
-      <Login/>
+      {/* <Login/> */}
+      <Details/>
           </>
   )
 }

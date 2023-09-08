@@ -1,0 +1,39 @@
+
+.singleContainer{
+    display:flex;
+}
+.singleWrapper{
+    padding-top: 5%;
+    padding: 50px;
+    display:flex;
+
+}
+.imgCont{
+    flex:1;
+   }
+img{
+    width:100%;
+    height: 80vh;
+
+}
+.infoContainer{
+    margin-top: 20%;
+    flex:1;
+    padding: 0px 50px;
+    font-family: sans-serif;
+    }
+.singlerating{
+ float: right;
+ color:red;
+ font-weight: 400;
+}
+.singleTitle{
+    font-weight: 600;
+    font-size: larger;
+
+}
+.productDetails{
+    margin:20px;
+}
+.detPrice{
+font-display:inherit}
