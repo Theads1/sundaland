@@ -1,5 +1,7 @@
 import Badge from '@mui/material/Badge';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import SettingsIcon from '@mui/icons-material/Settings';
 import "./navbar.css"
 
 const Navbar = () => {
@@ -29,15 +31,15 @@ const Navbar = () => {
         </div>
         <div className='navRight'>
         <span className='rightItem'>
-           Register
-        </span>
-        <span className='rightItem'>
-           Sign In
-        </span>
-        <span className='rightItem'>
         <Badge badgeContent={4} color="primary">
        <ShoppingCartOutlinedIcon color="action" />
        </Badge>
+        </span>
+        <span className='rightItem'>
+        <AccountCircleIcon/>
+        </span>
+        <span className='rightItem'>
+           <SettingsIcon/>
         </span>
 
         </div>

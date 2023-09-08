@@ -1,0 +1,67 @@
+.sideContainer{
+  margin-top: 8%;
+  font-family: 'Preahvihear', sans-serif;
+  margin-left: 4%;
+  width: 20%;
+
+}
+.sideWrapper{
+  height: max-content;
+    flex-wrap: wrap;
+    align-content: center;
+    width:max-content;
+}
+
+ul{
+    list-style: none;
+    position: relative;
+    
+}
+
+li:hover{
+    cursor:pointer;
+    text-decoration: underline;
+
+}
+
+.sideBottom{
+margin-top: 70px;
+background-color: rgba(221, 215, 211, 0.473);
+border-radius: 1%;
+font-size: small;
+
+}
+
+.rating {
+  display: inline-block;
+}
+
+.rating input {
+  display: none;
+}
+
+.rating label {
+  float: right;
+  cursor: pointer;
+  color: #ccc;
+  transition: color 0.3s;
+}
+
+.rating label:before {
+  content: '\2605';
+  font-size: 30px;
+}
+
+.rating input:checked ~ label,
+.rating label:hover,
+.rating label:hover ~ label {
+  color: #ff9100;
+  transition: color 0.3s;
+}
+.socials{
+  display: inline;
+}
+
+
+
+
