@@ -7,8 +7,8 @@ const MerchItem = ({item}) => {
     <div className='itemCont'>
 <img src={item.image} className="card-img" />
   <div className="card-info">
-    <p className="text-title">{item.title} </p>
-    <p className="text-body">{item.description}</p>
+    {/* <p className="text-title">{item.title} </p> */}
+    {/* <p className="text-body">{item.description}</p> */}
   </div>
   <div className="card-footer">
   <span className="text-title">${item.price}</span>
