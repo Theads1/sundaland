@@ -1,0 +1,125 @@
+.navLeft, .navRight{
+    content-visibility: hidden;
+}
+
+.registerContainer{
+    font-family: 'Preahvihear', sans-serif;
+    padding-top: 10%;
+    padding-left: 40%;
+    /* justify-content: center;
+    align-items: center; */
+
+}
+
+
+.regTitle{
+    font-size: 30px;
+    font-weight: 600;
+    /* padding-left: 14%; */
+
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 350px;
+    background-color: #fff;
+    border-radius: 20px;
+    align-content: center;
+    justify-content: center;
+    position: relative;
+  }
+  
+
+  
+  .message, .signin {
+    color: rgba(88, 87, 87, 0.822);
+    font-size: 14px;
+  }
+  
+  .signin {
+    text-align: center;
+  }
+  
+  .signin a {
+    color: royalblue;
+  }
+  
+  .signin a:hover {
+    text-decoration: underline royalblue;
+  }
+  
+  .flex {
+    display: flex;
+    width: 100%;
+    gap: 6px;
+  }
+  
+  .form label {
+    position: relative;
+  }
+  
+  .form label .input {
+    width: 100%;
+    padding: 17px 10px 15px 10px;
+    outline: 0;
+    border: 1px solid rgba(105, 105, 105, 0.397);
+    border-radius: 10px;
+  }
+  
+  .form label .input + span {
+    position: absolute;
+    left: 10px;
+    top: 18px;
+    color: grey;
+    font-size: 0.9em;
+    cursor: text;
+    transition: 0.3s ease;
+  }
+  
+  .form label .input:placeholder-shown + span {
+    top: 15px;
+    font-size: 0.9em;
+  }
+  
+  .form label .input:focus + span,.form label .input:valid + span {
+    top: 0px;
+    font-size: 0.8em;
+    font-weight: 500;
+  }
+  
+  .form label .input:valid + span {
+    color: rgb(255, 94, 1);
+  }
+  
+  .submit {
+    border: none;
+    outline: none;
+    background-color: rgb(248, 115, 7);
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 16px;
+    transform: .3s ease;
+  }
+  
+  .submit:hover {
+    background-color: rgb(238, 154, 116);
+    cursor: pointer;
+  }
+  
+  @keyframes pulse {
+    from {
+      transform: scale(0.9);
+      opacity: 1;
+    }
+  
+    to {
+      transform: scale(1.8);
+      opacity: 0;
+    }
+  }
+
+
+
