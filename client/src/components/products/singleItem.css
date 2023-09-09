@@ -1,12 +1,19 @@
 
 .singleContainer{
     display:flex;
+
+}
+i{
+    padding-top: 3%;
+    color:orangered;
+    padding-left: 6%;
 }
 .singleWrapper{
     padding-top: 5%;
     padding: 50px;
     display:flex;
-
+    border: 2px;
+    box-shadow: 0 30px 40px rgba(0,0,0,.1);
 }
 .imgCont{
     flex:1;
@@ -17,10 +24,11 @@ img{
 
 }
 .infoContainer{
-    margin-top: 20%;
+    margin-top: 15%;
     flex:1;
     padding: 0px 50px;
     font-family: sans-serif;
+
     }
 .singlerating{
  float: right;
@@ -29,11 +37,101 @@ img{
 }
 .singleTitle{
     font-weight: 600;
-    font-size: larger;
+    font-size: 30px;
 
 }
 .productDetails{
-    margin:20px;
+    margin:20px 0px;
 }
 .detPrice{
-font-display:inherit}
+    font-weight: 200;
+    font-size: 25px;
+
+ }
+.addCont{
+display: flex;
+align-items: center;
+width: 50%;
+justify-content:space-evenly;
+}
+.removeSingle{
+
+}
+.singleSum{
+ width: 50px;
+ height: 30px;
+ border-radius: 10px;
+ border: 1px black solid;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ margin: 1px 3px;
+}
+.addSingle{
+}
+
+ .CartBtn {
+    width: 145px;
+    height: 40px;
+    border-radius: 12px;
+    border: none;
+    background-color: rgb(253, 110, 44);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition-duration: .5s;
+    overflow: hidden;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.103);
+    position: relative;
+    font-family: sans-serif;
+
+  }
+  
+  .IconContainer {
+    position: absolute;
+    left: -55px;
+    width: 28px;
+    height: 28px;
+    background-color: transparent;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    z-index: 2;
+    transition-duration: .5s;
+  }
+  
+  .icon {
+    border-radius: 1px;
+  }
+  
+  .text {
+    height: 100%;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(17, 17, 17);
+    z-index: 1;
+    transition-duration: .5s;
+    font-size: 1.04em;
+    font-weight: 600;
+  }
+  
+  .CartBtn:hover .IconContainer {
+    transform: translateX(58px);
+    border-radius: 40px;
+    transition-duration: .5s;
+  }
+  
+  .CartBtn:hover .text {
+    transform: translate(10px,0px);
+    transition-duration: .5s;
+  }
+  
+  .CartBtn:active {
+    transform: scale(0.95);
+    transition-duration: .5s;
+  }
