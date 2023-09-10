@@ -6,19 +6,19 @@ const Categories = () => {
     <p> Featured Categories</p>
     <div className="catcontainer">
         <span className="catCard">
-            <h1 className="catTitle">Kid's</h1>
+            <h1 className="catTitle">Boys</h1>
         </span>
         <span className="catCard">
-            <h1 className="catTitle">Men's</h1>
+            <h1 className="catTitle">Girls</h1>
         </span>
         <span className="catCard">
-            <h1 className="catTitle">Women's</h1>
+            <h1 className="catTitle">Baby</h1>
         </span>
         <span className="catCard">
-            <h1 className="catTitle">Jewelry</h1>
+            <h1 className="catTitle">Books</h1>
         </span>
         <span className="catCard">
-            <h1 className="catTitle">Electronics</h1>
+            <h1 className="catTitle">& more</h1>
         </span>
     </div>
     </div>
