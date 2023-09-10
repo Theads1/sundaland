@@ -1,0 +1,136 @@
+.cartCont{
+    font-family: sans-serif;
+
+}
+.cartWrapper{
+padding:20px;
+}
+
+.cartTitle{
+    font-family: 'Preahvihear', sans-serif;
+    text-align: center;
+}
+.cartTop{
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 20px;
+}
+
+.topBtna, .topBtnb{
+    padding:10px;
+    font-weight: 700;
+    cursor:pointer;
+    border-radius: 10px;
+
+}
+.topBtna{
+    background-color: rgb(255, 210, 10);
+    border: 2px orange;
+    color:rgb(255, 120, 10);
+
+}
+.topBtnb{
+    border:none;
+    background-color: rgb(255, 120, 10);
+
+}
+.topInfo{
+font-size: larger;
+}
+.topTexts{
+text-decoration: underline;
+cursor:pointer;
+margin:0px 10px;
+}
+.cartBottom{
+display: flex;
+justify-content: space-between;
+}
+.bottomInfo{
+ flex: 3;
+}
+
+.cartProduct{
+    display: flex;
+    justify-content: space-between;
+}
+.cartDetail{
+    flex: 2;
+    display:flex;
+}
+.cartImg{
+width: 150px;
+}
+.productDets{
+    flex:2;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+}
+.pText
+.cartPrice{
+    flex:1;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.productAmountCont{
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+    border:2px black solid;
+    border-radius: 10px;
+    margin-bottom: 15%;
+
+
+
+
+}
+.addCart,.removeCart{ 
+    margin: 5px;
+
+
+}
+/* .removeCart{
+
+}
+.productAmount{
+}  */
+.productPrice{
+    font-size: 30px;
+    font-weight: 400;
+}
+
+hr{
+        border: none;
+        background-color: orange;
+        height: 1px;
+}
+.bottomSummary{
+    flex:1;
+    padding-left: 10%;
+    border:lightgray solid 1px;
+    border-radius: 10px;
+    padding: 20px;
+    height: 50vh;
+    }
+.sumTitle{
+    font-weight: 200;
+}
+.sumItem{
+    margin: 20px 0px;
+    display: flex;
+    justify-content: space-between;
+}
+.sumItemTextA{
+    font-weight: 500px;
+}
+.sumItemtext
+.sumItemPrice
+
+
+   
+
