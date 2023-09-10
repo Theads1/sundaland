@@ -29,7 +29,7 @@ const Navbar = () => {
         </div>
         <div className='navRight'>
         <span className='rightItem'>
-           Profile
+           Register
         </span>
         <span className='rightItem'>
            Sign In
