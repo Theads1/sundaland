@@ -5,7 +5,7 @@ import './merchItem.css'
 const MerchItem = ({item}) => {
   return (
     <div className='itemCont'>
-<img src={item.image} className="card-img" />
+<img src={item.img} className="card-img" />
   <div className="card-info">
     {/* <p className="text-title">{item.title} </p> */}
     {/* <p className="text-body">{item.description}</p> */}

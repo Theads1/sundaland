@@ -1,10 +1,14 @@
 import { Fragment } from "react"
+import { useLocation } from 'react-router-dom'
+
 import "./sidebar.css"
 import AlternateEmailOutlinedIcon from '@mui/icons-material/AlternateEmailOutlined';
 import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
 import InstagramIcon from '@mui/icons-material/Instagram';
 
 const Sidebar = () => {
+    const location = useLocation();
+
   return (
     <Fragment>
     <div className="sideContainer">
@@ -38,20 +42,20 @@ const Sidebar = () => {
                 <li> High-Low</li>
                 <li> Low-High</li>
             </ul>
-            <input className="slider" value="50" max="1000" min="0" type="range"/>
+            <input className="slider" defaultValue="50" max="1000" min="0" type="range"/>
         </span>
         <span className="sideCenter">
           <p>Rating</p>
           <div className="rating">
-          <input value="5" name="rating" id="star5" type="radio"/>
+          <input defaultValue="5" name="rating" id="star5" type="radio"/>
          <label htmlFor="star5"></label>
-          <input value="4" name="rating" id="star4" type="radio"/>
+          <input defaultValue="4" name="rating" id="star4" type="radio"/>
            <label htmlFor="star4"></label>
-         <input value="3" name="rating" id="star3" type="radio"/>
+         <input defaultValue="3" name="rating" id="star3" type="radio"/>
          <label htmlFor="star3"></label>
-          <input value="2" name="rating" id="star2" type="radio"/>
+          <input defaultValue="2" name="rating" id="star2" type="radio"/>
           <label htmlFor="star2"></label>
-          <input value="1" name="rating" id="star1" type="radio"/>
+          <input defaultValue="1" name="rating" id="star1" type="radio"/>
          <label htmlFor="star1"></label>
         </div>
         </span>

@@ -1,4 +1,7 @@
 import "./categories.css"
+import {categories} from "../../media/fakeData.js"
+
+// import {Link} from "react-router-dom"
 
 const Categories = () => {
   return (

@@ -8,9 +8,9 @@ const Merch = () => {
 
   const getClothes = async()=>{
     try {
-      const response = await fetch("https://fakestoreapi.com/products");
+      const response = await fetch("http://localhost:5000/api/merch");
       const data = await response.json();
-      setClothes(data);
+      setClothes(data.rows);
       
     } catch (error) {
       console.error(error.message);
@@ -25,8 +25,8 @@ const Merch = () => {
     <article className="merch">
         <h1> Products </h1>
     <div className="merchContainer">
-      {clothes.map(item=>(
-        <MerchItem item={item} key={item.id} />
+      {clothes && clothes.map((item)=>(
+        <MerchItem item={item} key={item.product_id} />
       ))}
     </div>
     </article>
