@@ -1,7 +1,12 @@
 import "../components/products/singleItem.css"
 import Navbar from "../components/homepage/Navbar"
+import { useState } from "react";
 
 const Details = () => {
+const [detail,setDetails] = useState("")
+
+
+
   return (
     <div className="detailCont">
       <Navbar />{" "}
