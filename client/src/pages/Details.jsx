@@ -1,9 +1,50 @@
+/* eslint-disable no-undef */
 import "../components/products/singleItem.css"
 import Navbar from "../components/homepage/Navbar"
-import { useState } from "react";
+// import Merch from "../components/products/Merch";
+import { useEffect, useState } from "react";
+import { useLocation, Link } from "react-router-dom";
+
 
 const Details = () => {
-const [detail,setDetails] = useState("")
+  const location = useLocation();
+const id = location.pathname.split("/")[2];
+
+const [detail, setDetail] = useState({});
+
+const [quantity, setQuantity] = useState(1)
+
+const getDetails = async ()=>{
+  try {
+    const response = await fetch("http://localhost:5000/api/find/"+id);
+    const data = await response.json();
+    setDetail(data.rows[0]);
+    console.log(data.rows[0]);
+      } catch (error) {
+        console.log(error)
+    
+  }
+}
+
+useEffect(()=>{
+getDetails();
+}, []);
+
+const handleQuantity = (type)=>{
+  if (type === "dec"){
+    quantity>1 && setQuantity(quantity-1)
+  }else{
+    setQuantity(quantity+1)
+  }
+
+};
+
+const handleCart = ()=>{
+  //post to cart redux or manual??
+  
+
+}
+
 
 
 
@@ -11,36 +52,37 @@ const [detail,setDetails] = useState("")
     <div className="detailCont">
       <Navbar />{" "}
       <div>
+        <Link to={`/products`}>
         <i className="fa fa-arrow-left" aria-hidden="true">
           {" "}
           Back
         </i>
+        </Link>
         <div className="singleContainer">
           <div className="singleWrapper">
             <div className="imgCont">
-              <img src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg" />
+              <img src={detail.img} />
             </div>
           </div>
           <div className="infoContainer">
             <p className="singleTitle">
-              Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops
+              {detail.title}
             </p>
-            <p className="singlerating"> rating: 4.5 </p>
+            <p className="singlerating"> rating: {detail.rating} </p>
             <p className="productDetails">
-              Your perfect pack for everyday use and walks in the forest. Stash
-              your laptop (up to 15 inches) in the padded sleeve, your everyday
+              {detail.description}
             </p>
-            <p className="detPrice">Price:109.95 usd</p>
+            <p className="detPrice">Price:$ {detail.price} usd</p>
             <p> This item sales as is. OS. Dimensions available upon request</p>
             <div className="addCont">
               <div className="removeSingle">
-                <i className="fa fa-minus" aria-hidden="true"></i>
+                <i className="fa fa-minus" aria-hidden="true" onClick={()=> handleQuantity("dec")}></i>
               </div>
-              <span className="singleSum">1</span>
+              <span className="singleSum">{quantity}</span>
               <div className="addSingle">
-                <i className="fa fa-plus" aria-hidden="true"></i>
+                <i className="fa fa-plus" aria-hidden="true"onClick={()=> handleQuantity("inc")}></i>
               </div>
-              <button className="CartBtn">
+              <button className="CartBtn" onClick={handleCart}>
                 <span className="IconContainer">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

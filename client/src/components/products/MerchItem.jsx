@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import './merchItem.css'
 // import AddOutlinedIcon from '@mui/icons-material/AddOutlined';
 // import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
@@ -5,7 +6,9 @@ import './merchItem.css'
 const MerchItem = ({item}) => {
   return (
     <div className='itemCont'>
+      <Link to={`/product/${item.product_id}`}>
 <img src={item.img} className="card-img" />
+</Link>
   <div className="card-info">
     {/* <p className="text-title">{item.title} </p> */}
     {/* <p className="text-body">{item.description}</p> */}
