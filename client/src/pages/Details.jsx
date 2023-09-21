@@ -4,22 +4,25 @@ import Navbar from "../components/homepage/Navbar"
 // import Merch from "../components/products/Merch";
 import { useEffect, useState } from "react";
 import { useLocation, Link } from "react-router-dom";
+import { addProduct } from "../redux/cartRedux";
+import { useDispatch } from "react-redux";
+
+
 
 
 const Details = () => {
   const location = useLocation();
 const id = location.pathname.split("/")[2];
-
 const [detail, setDetail] = useState({});
 
-const [quantity, setQuantity] = useState(1)
+const [quantity, setQuantity] = useState(1);
+const dispatch = useDispatch();
 
 const getDetails = async ()=>{
   try {
     const response = await fetch("http://localhost:5000/api/find/"+id);
     const data = await response.json();
     setDetail(data.rows[0]);
-    console.log(data.rows[0]);
       } catch (error) {
         console.log(error)
     
@@ -28,6 +31,7 @@ const getDetails = async ()=>{
 
 useEffect(()=>{
 getDetails();
+// eslint-disable-next-line react-hooks/exhaustive-deps
 }, []);
 
 const handleQuantity = (type)=>{
@@ -38,15 +42,9 @@ const handleQuantity = (type)=>{
   }
 
 };
-
-const handleCart = ()=>{
-  //post to cart redux or manual??
-  
-
-}
-
-
-
+const addToCart =()=>{
+  dispatch(addProduct({...detail, quantity}));
+};
 
   return (
     <div className="detailCont">
@@ -82,7 +80,7 @@ const handleCart = ()=>{
               <div className="addSingle">
                 <i className="fa fa-plus" aria-hidden="true"onClick={()=> handleQuantity("inc")}></i>
               </div>
-              <button className="CartBtn" onClick={handleCart}>
+              <button className="CartBtn" onClick={()=> addToCart(detail)}>
                 <span className="IconContainer">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
