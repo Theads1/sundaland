@@ -64,6 +64,7 @@
     fill: #57575a;
     width: 1rem;
     height: 1rem;
+
    }
    
 .centerLogo{
@@ -72,7 +73,6 @@
     justify-content: center;
     font-weight: bolder;
     font-size:x-large;
-    
 }
 .letter{
     transition: 0.4s;
