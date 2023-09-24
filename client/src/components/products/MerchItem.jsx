@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { Link } from "react-router-dom"
 import { addProduct } from "../../redux/cartRedux";
 import { useDispatch } from "react-redux";
@@ -8,6 +9,7 @@ import './merchItem.css'
 
 const MerchItem = ({item}) => {
   const dispatch = useDispatch();
+  
   const addToCart =(item, quantity)=>{
     dispatch(addProduct({...item, quantity}));
   };

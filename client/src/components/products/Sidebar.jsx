@@ -1,12 +1,12 @@
-import { Fragment } from "react"
+import { Fragment,} from "react"
 import { Link, } from 'react-router-dom'
-
 import "./sidebar.css"
 import AlternateEmailOutlinedIcon from '@mui/icons-material/AlternateEmailOutlined';
 import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
 import InstagramIcon from '@mui/icons-material/Instagram';
 
 const Sidebar = () => {
+
 
   return (
     <Fragment>
@@ -15,14 +15,11 @@ const Sidebar = () => {
         <span className="sideTop">
             <p> Categories</p>
             <ul>
-
                 <li>
                 <Link to={`/products/`} target="_blank">
                    All
                 </Link>
                 </li>
-
-
                 <li>
                 <Link to={`/products/boys`} target="_blank">
                     Boys
