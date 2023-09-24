@@ -1,10 +1,14 @@
+/* eslint-disable react/jsx-key */
 import "../components/user/cart.css"
 import Sales from '../components/homepage/Sales'
 import Navbar from "../components/homepage/Navbar"
 import { Fragment } from "react"
+import { useSelector } from "react-redux"
 
 
-const Cart = () => {
+const Cart = (product) => {
+
+    const cart = useSelector(state=>state.cart)
   return (
     <Fragment>
         <Sales/>
@@ -25,47 +29,28 @@ const Cart = () => {
                     </div>
                 <div className="cartBottom">
                     <div className="bottomInfo">
-                        <div className="cartProduct">
+                       {cart.products.map(product => (
+                       <div className="cartProduct" key={product.product_id} >
                             <div className="cartDetail">
-                                <img className="cartImg" src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg" />
+                                <img className="cartImg" src={product.img} />
                                 <span className="productDets">
-                                    <span className="pText"> <b>Product: </b>Fjallraven - Foldsack No. 1 Backpack</span>
-                                    <span className="pText"> <b>Product ID: </b>1</span>
-                                    <span className="pText"> <b>Category: </b>men's clothing</span>
+                                    <span className="pText"> <b>Product: </b>{product.title}</span>
+                                    <span className="pText"> <b>Product ID: </b>{product.product_id}</span>
+                                    <span className="pText"> <b>Category: </b>{product.category}</span>
 
                                 </span>
                             </div>
                             <div className="cartPrice">
                                 <span className="productAmountCont">
                                     <i className="removeCart fa fa-minus"> </i>
-                                    <div className="productAmount"> 2 </div>
+                                    <div className="productAmount"> {product.quantity} </div>
                                     <i className="addCart fa fa-plus"> </i>
                                     
                                 </span>
-                                <div className="productPrice"> $ 50 </div>
+                                <div className="productPrice"> {product.price*product.quantity} </div>
                             </div>
-                        </div>
+                        </div>))}
                         <hr />
-                        <div className="cartProduct">
-                            <div className="cartDetail">
-                                <img className="cartImg" src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg" />
-                                <span className="productDets">
-                                    <span className="pText"> <b>Product: </b>Fjallraven - Foldsack No. 1 Backpack</span>
-                                    <span className="pText"> <b>Product ID: </b>1</span>
-                                    <span className="pText"> <b>Category: </b>men's clothing</span>
-
-                                </span>
-                            </div>
-                            <div className="cartPrice">
-                                <span className="productAmountCont">
-                                    <i className="removeCart fa fa-minus"> </i>
-                                    <div className="productAmount"> 2 </div>
-                                    <i className="addCart fa fa-plus"> </i>
-                                    
-                                </span>
-                                <div className="productPrice"> $ 50 </div>
-                            </div>
-                        </div>
                     </div>
                     
                     
@@ -75,7 +60,7 @@ const Cart = () => {
                             Order Summary</h1>
                         <div className="sumItem">
                             <span className="sumItemtext"> Subtotal</span>
-                                <span className="sumItemPrice">$100</span>
+                                <span className="sumItemPrice">{cart.total}</span>
                         </div>
                         <div className="sumItem">
                             <span className="sumItemtext"> Est. Shipping</span>
@@ -83,11 +68,11 @@ const Cart = () => {
                         </div>
                         <div className="sumItem">
                             <span className="sumItemtext"> Coupons</span>
-                                <span className="sumItemPrice">$-10</span>
+                                <span className="sumItemPrice">$0</span>
                         </div>
                         <div className="sumItem" style={{ fontSize: '25px' }}>
                             <span className="sumItemTextA" style={{ fontWeight: 'bolder' }}> Total</span>
-                                <span className="sumItemPrice">$90</span>
+                                <span className="sumItemPrice">{cart.total}</span>
                         </div>
                         <button className="topBtnb">Checkout Now</button>
 

@@ -40,9 +40,9 @@ const handleQuantity = (type)=>{
   }else{
     setQuantity(quantity+1)
   }
-
 };
 const addToCart =()=>{
+  
   dispatch(addProduct({...detail, quantity}));
 };
 
