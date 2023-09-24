@@ -1,5 +1,5 @@
 import { Fragment } from "react"
-import { useLocation } from 'react-router-dom'
+import { Link, } from 'react-router-dom'
 
 import "./sidebar.css"
 import AlternateEmailOutlinedIcon from '@mui/icons-material/AlternateEmailOutlined';
@@ -7,7 +7,6 @@ import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
 import InstagramIcon from '@mui/icons-material/Instagram';
 
 const Sidebar = () => {
-    const location = useLocation();
 
   return (
     <Fragment>
@@ -16,24 +15,40 @@ const Sidebar = () => {
         <span className="sideTop">
             <p> Categories</p>
             <ul>
+
                 <li>
+                <Link to={`/products/`} target="_blank">
                    All
+                </Link>
                 </li>
+
+
                 <li>
-                    Kids
+                <Link to={`/products/boys`} target="_blank">
+                    Boys
+                </Link>
                 </li>
+
+                <Link to={`/products/girls`} target="_blank">
                 <li>
-                    Women
+                    Girls
                 </li>
+                </Link>
+                <Link to={`/products/baby`} target="_blank">
                 <li>
-                    Men
+                    Baby
                 </li>
+                </Link>
+                <Link to={`/products/books`} target="_blank">
                 <li>
-                    Jewelry
+                    Books
                 </li>
+                </Link>
+                <Link to={`/products/other`} target="_blank">
                 <li>
-                    Electronics
+                    Other
                 </li>
+                </Link>
             </ul>
         </span>
         <span className="sideCenter">

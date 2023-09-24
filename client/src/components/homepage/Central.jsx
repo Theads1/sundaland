@@ -1,5 +1,6 @@
 import "./central.css"
 import lantern from "../../media/lantern.jpg"
+import { Link } from "react-router-dom"
 
 const Central = () => {
   return (
@@ -11,7 +12,7 @@ const Central = () => {
        <figure className="cInfo">
         <h1 className="cTitle"> Spooky Deals</h1>
         <p className="cDesc"> annual halloween sale starts October 7</p>
-        <button className="cshop"> Shop All</button>
+        <Link to={`/products`}><button className="cshop"> Shop All</button></Link>
 
        </figure>
 
