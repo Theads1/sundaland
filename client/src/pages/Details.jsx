@@ -1,6 +1,5 @@
 /* eslint-disable no-undef */
 import "../components/products/singleItem.css"
-import Navbar from "../components/homepage/Navbar"
 // import Merch from "../components/products/Merch";
 import { useEffect, useState } from "react";
 import { useLocation, Link } from "react-router-dom";
@@ -48,7 +47,6 @@ const addToCart =()=>{
 
   return (
     <div className="detailCont">
-      <Navbar />{" "}
       <div>
         <Link to={`/products`}>
         <i className="fa fa-arrow-left" aria-hidden="true">

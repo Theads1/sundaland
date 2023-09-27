@@ -1,7 +1,5 @@
 /* eslint-disable react/jsx-key */
 import "../components/user/cart.css"
-import Sales from '../components/homepage/Sales'
-import Navbar from "../components/homepage/Navbar"
 import { Fragment } from "react"
 import { useSelector } from "react-redux"
 
@@ -11,8 +9,6 @@ const Cart = (product) => {
     const cart = useSelector(state=>state.cart)
   return (
     <Fragment>
-        <Sales/>
-        <Navbar/>
         <div className="cartCont">
             <div className="cartWrapper">
                 <h1 className="cartTitle">

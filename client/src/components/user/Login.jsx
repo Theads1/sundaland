@@ -1,41 +1,77 @@
-import { Fragment } from "react"
+/* eslint-disable react/prop-types */
+import { Fragment, useState } from "react"
 import "./login.css"
-import Navbar from "../homepage/Navbar"
+import { Link } from "react-router-dom"
+
+const Login = ({setAuth}) => {
+
+  const [email, setEmail]= useState("");
+  const [password, setPassword]= useState("");
+  console.log(email,password)
 
 
-const Login = () => {
+
+ const handleSubmit = async(e)=>{ 
+  e.preventDefault();
+  const body = {email, password}
+
+    try {
+
+      const response = await fetch('http://localhost:5000/auth/login', { 
+        method:"POST",
+        headers:{"Content-Type" : "application/json",
+        'Access-Control-Allow-Origin':'*',
+        'Access-Control-Allow-Methods':'POST'},
+        body: JSON.stringify(body)
+      })
+      const log = await response.json();
+      console.log(log)
+      
+    localStorage.setItem("token", log.token);
+
+    setAuth(true);
+
+
+    } catch (error) {
+      console.log(error)
+      
+    }
+
+  }
+
+
+
   return (
     <Fragment>
     <div className="login">
     <div className="logoContainer">
-        <Navbar/>
     </div>
  <div className="loginContainer">
     <div className="logTitle">Login </div>
-    <form className="form">
+    <form className="form" onSubmit={handleSubmit}>
       <p className="message">
       Happy Shopping 😃{" "}
       </p>
-
       <label>
-        <input className="input" type="email" placeholder="" required="" />
+        <input className="input" id="email" type="email" defaultValue={email} onChange={(e)=> setEmail(e.target.value)} />
         <span>Email</span>
       </label>
 
       <label>
         <input
           className="input"
+          id="password"
           type="password"
-          placeholder=""
-          required=""
+          defaultValue={password}
+          onChange={(e)=> setPassword(e.target.value)}
         />
         <span>Password</span>
       </label>
-      <button className="submit">Log In</button>
+      <button className="submit" > Log In</button>
       <a href="#">forgot password?</a>{" "}
 
       <p className="signin">
-        Don't have an account ? <a href="#">Create an account</a>{" "}
+        Don't have an account ? <Link to={`/register`}>Create an account</Link>{" "}
       </p>
     </form>
   </div>

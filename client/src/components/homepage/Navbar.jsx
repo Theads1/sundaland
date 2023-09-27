@@ -1,11 +1,15 @@
 import Badge from '@mui/material/Badge';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import "./navbar.css"
+import {  useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from "react-router-dom"
 
-const Navbar = () => {
+const Navbar = ({setAuth}) => {
   const quantity = useSelector(state=>state.cart.quantity);
+
+  useEffect(()=>{
+  })
 
 
   return (
@@ -33,12 +37,27 @@ const Navbar = () => {
         </div>
         </Link>
         <div className='navRight'>
+        {/* <Link to={ `/login`} style={{color: 'black',textDecorationLine: 'none'}}>
         <span className='rightItem'>
-           Register
-        </span>
+        { 'Login'}   
+        
+            </span>
+        </Link> */}
+       {/* { setAuth? 
+       <Link to={`/logout`} style={{color: 'black',textDecorationLine: 'none'}}>
+       <span className='rightItem'>
+         Logout        
+           </span>
+       </Link>  
+       
+       :<Link to={`/login`} style={{color: 'black',textDecorationLine: 'none'}}>
         <span className='rightItem'>
-           Sign In
-        </span>
+          Login        
+            </span>
+        </Link>
+
+      } */}
+
         <span className='rightItem'>
           <Link to={`/cart`}>
         <Badge badgeContent={quantity} color="primary">
