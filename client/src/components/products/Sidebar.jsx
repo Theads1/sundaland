@@ -1,11 +1,21 @@
-import { Fragment,} from "react"
-import { Link, } from 'react-router-dom'
+import { Fragment, useState, } from "react"
+import { Link,} from 'react-router-dom'
 import "./sidebar.css"
 import AlternateEmailOutlinedIcon from '@mui/icons-material/AlternateEmailOutlined';
 import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
 import InstagramIcon from '@mui/icons-material/Instagram';
 
 const Sidebar = () => {
+
+//failed sort and filter, check later
+//   const asc=()=>{
+//     // toys.sort((a,b)=>a.price > b.price?1:-1)
+//     toys.sort((a, b) => toys.price(a) - toys.price(b));
+//   }
+
+//   const desc =()=>{
+//     toys.sort((a, b) => toys.price(b) - toys.price(a));
+//   }
 
 
   return (
@@ -16,32 +26,32 @@ const Sidebar = () => {
             <p> Categories</p>
             <ul>
                 <li>
-                <Link to={`/products/`} target="_blank">
+                <Link to={`/products/`} target="top">
                    All
                 </Link>
                 </li>
                 <li>
-                <Link to={`/products/boys`} target="_blank">
+                <Link to={`/products/boys`} target="_top">
                     Boys
                 </Link>
                 </li>
 
-                <Link to={`/products/girls`} target="_blank">
+                <Link to={`/products/girls`} target="_top">
                 <li>
                     Girls
                 </li>
                 </Link>
-                <Link to={`/products/baby`} target="_blank">
+                <Link to={`/products/baby`} target="_top">
                 <li>
                     Baby
                 </li>
                 </Link>
-                <Link to={`/products/books`} target="_blank">
+                <Link to={`/products/books`} target="_top">
                 <li>
                     Books
                 </li>
                 </Link>
-                <Link to={`/products/other`} target="_blank">
+                <Link to={`/products/other`} target="_top">
                 <li>
                     Other
                 </li>
@@ -50,30 +60,31 @@ const Sidebar = () => {
         </span>
         <span className="sideCenter">
             <p> Price </p>
-            <ul> 
-                <li> High-Low</li>
-                <li> Low-High</li>
-            </ul>
-            <input className="slider" defaultValue="50" max="1000" min="0" type="range"/>
+        <input defaultValue="asc" name="price" id="asc" type="radio" />
+         <label htmlFor="asc"> High-Low</label>
+         <br/>
+          <input defaultValue="desc" name="price" id="desc" type="radio" />
+           <label htmlFor="star4">Low-High</label>
         </span>
         <span className="sideCenter">
           <p>Rating</p>
           <div className="rating">
-          <input defaultValue="5" name="rating" id="star5" type="radio"/>
+          <input defaultValue="5" name="rate" id="star5" type="radio"/>
          <label htmlFor="star5"></label>
-          <input defaultValue="4" name="rating" id="star4" type="radio"/>
+          <input defaultValue="4" name="rate" id="star4" type="radio"/>
            <label htmlFor="star4"></label>
-         <input defaultValue="3" name="rating" id="star3" type="radio"/>
+         <input defaultValue="3" name="rate" id="star3" type="radio"/>
          <label htmlFor="star3"></label>
-          <input defaultValue="2" name="rating" id="star2" type="radio"/>
+          <input defaultValue="2" name="rate" id="star2" type="radio"/>
           <label htmlFor="star2"></label>
-          <input defaultValue="1" name="rating" id="star1" type="radio"/>
+          <input defaultValue="1" name="rate" id="star1" type="radio"/>
          <label htmlFor="star1"></label>
         </div>
         </span>
             <div className="sideBottom">
 
             <p> More </p>
+            <Link to={`/error`} style={{ textDecoration: "none" , color:"black"}}>
             <ul> 
                 <li> About Us</li>
                 <li> Track Package</li>
@@ -84,6 +95,7 @@ const Sidebar = () => {
 
 
             </ul>
+            </Link>
               </div>
 
     
