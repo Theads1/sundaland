@@ -1,16 +1,19 @@
-import { Fragment, useEffect, useState, } from "react"
+import { Fragment, useState,  } from "react"
 import "./register.css"
-import { Link } from "react-router-dom"
-const Register = ({setAuth}) => {
+import { Link, useNavigate } from "react-router-dom"
+import { toast } from 'react-toastify';
+
+const Register = () => {
 
 
   const [name, setName]= useState("");
   const [email, setEmail]= useState("");
   const [password, setPassword]= useState("");
 
+  const navigate = useNavigate()
 
 
-console.log(name, email, password)
+
 
 
 const handleSubmit = async (e)=>{
@@ -26,18 +29,23 @@ const handleSubmit = async (e)=>{
     })
 
     const regi = await response.json();
-    console.log(regi);
-
+    if (response.status === 200){
+       navigate('/login')
+       toast.success("registeration successful")
+    }else{
+      toast.error(regi)
+    }
     
     localStorage.setItem("token", regi.token);
-    setAuth(true);
 
 
   } catch (error) {
     console.log(error);}
 
 }
-
+// useEffect(() =>{
+// handleSubmit();
+// },[])
   return (
     <Fragment>
       <div className="register">
