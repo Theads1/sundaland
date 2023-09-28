@@ -113,14 +113,15 @@ hr{
 .bottomSummary{
     flex:1;
     padding-left: 10%;
-    border:lightgray solid 1px;
+    /* border:lightgray solid 1px; */
     border-radius: 1rem;
     padding: 3rem;
-    height: 50vh;
+    width: fit-content;
+    height: fit-content;
     }
 .sumTitle{
     font-weight: 200;
-    font-size: 5rem;
+    font-size: 4rem;
 }
 .sumItem{
     margin: 2rem 0px;
@@ -129,4 +130,4 @@ hr{
 }
 .sumItemTextA{
     font-weight: 500;
-}+
+}

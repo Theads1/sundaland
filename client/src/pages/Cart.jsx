@@ -9,7 +9,6 @@ const Cart = (product) => {
 
     const cart = useSelector(state=>state.cart);
 
-    const [quantity, setQuantity] = useState(0);
 
 
     // const handleQuantity = (type)=>{

@@ -19,12 +19,12 @@ i{
     flex:1;
    }
 img{
-    width:99%;
-    height: 70%;
+    width:95%;
+    height: 60%;
 
 }
 .infoContainer{
-    margin-top: 15%;
+    margin-top: 10%;
     flex:1;
     padding: 0px 5rem;
     font-family: sans-serif;
@@ -53,9 +53,10 @@ img{
  }
 .addCont{
 display: flex;
+float: right;
 align-items: center;
 width: 50%;
-justify-content:space-evenly;
+/* justify-content:space-evenly; */
 }
 .removeSingle{
 
