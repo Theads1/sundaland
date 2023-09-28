@@ -2,11 +2,10 @@
     background-color: rgb(255, 174, 0);
     border-top: 5px solid;
     font-family: 'Preahvihear', sans-serif;
-
 }
 p{
     text-align: center;
-    font-size: xx-large;
+    font-size: 2.5em;
     font-weight: 400;
     margin-bottom: 5%;
 }

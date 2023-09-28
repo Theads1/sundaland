@@ -31,7 +31,7 @@ const handleError = () => {
             <p> Categories</p>
             <ul>
                 <li>
-                <Link to={`/products/`} target="top">
+                <Link to={`/products/`} target="_top">
                    All
                 </Link>
                 </li>

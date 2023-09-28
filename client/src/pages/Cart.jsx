@@ -1,25 +1,23 @@
 /* eslint-disable react/jsx-key */
 import "../components/user/cart.css"
-import { Fragment, useState } from "react"
+import { Fragment } from "react"
 import { useSelector } from "react-redux"
 import { Link } from "react-router-dom"
 
-
 const Cart = (product) => {
 
-    const cart = useSelector(state=>state.cart)
 
-    const [quantity, setQuantity] = useState(cart.quantity)
+    const cart = useSelector(state=>state.cart);
 
-    let quan;
+    const [quantity, setQuantity] = useState(0);
 
-    const handleQuantity = (type)=>{
-        if (type === "dec"){
-          quantity>1 && setQuantity(quantity-1)
-        }else{
-          setQuantity(quantity+1)
-        }
-      };
+
+    // const handleQuantity = (type)=>{
+    //     if (type === "dec"){
+    //       quantity>0 && setQuantity(quantity-1)
+    //     }else{
+    //       setQuantity(quantity+1)
+    //     }};
   return (
     <Fragment>
         <div className="cartCont">
@@ -50,16 +48,15 @@ const Cart = (product) => {
                             </div>
                             <div className="cartPrice">
                                 <span className="productAmountCont">
-                                    <i className="removeCart fa fa-minus" onClick={()=> handleQuantity("dec")}> </i>
+                                    {/* add working code here for plus/minus */}
+                                    <i className="removeCart fa fa-minus"> </i>
                                     <div className="productAmount"> {product.quantity} </div>
-                                    <i className="addCart fa fa-plus" onClick={()=> handleQuantity("inc")}> </i>
+                                    <i className="addCart fa fa-plus"> </i>
                                     
                                 </span>
                                 <div className="productPrice"> {product.price*product.quantity} </div>
-                                <label htmlFor="">
-                                    Remove
-                                <input type="checkbox"/>
-                                </label>
+                                
+                                    {/* add remove button */}
                             </div>
 
                         </div>))}
