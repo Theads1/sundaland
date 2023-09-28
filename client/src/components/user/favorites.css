@@ -1,0 +1,128 @@
+.favoritesCont{
+    font-family: sans-serif;
+
+}
+.favoritesWrapper{
+padding:20px;
+}
+
+.favoritesTitle{
+    font-family: 'Preahvihear', sans-serif;
+    text-align: center;
+}
+.favoritesTop{
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 20px;
+}
+
+.topBtna, .topBtnb{
+    padding:10px;
+    font-weight: 700;
+    cursor:pointer;
+    border-radius: 10px;
+
+}
+.topBtna{
+    background-color: rgb(255, 210, 10);
+    border: 2px orange;
+    color:rgb(255, 120, 10);
+
+}
+.topBtnb{
+    border:none;
+    background-color: rgb(255, 120, 10);
+
+}
+.topInfo{
+font-size: larger;
+}
+.topTexts{
+text-decoration: underline;
+cursor:pointer;
+margin:0px 10px;
+}
+.favoritesBottom{
+display: flex;
+justify-content: space-between;
+}
+.bottomInfo{
+ flex: 3;
+}
+
+.favoritesProduct{
+    display: flex;
+    justify-content: space-between;
+}
+.favoritesDetail{
+    flex: 2;
+    display:flex;
+}
+.favoritesImg{
+width: 150px;
+}
+.productDets{
+    flex:2;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+}
+.pText
+.favoritesPrice{
+    flex:1;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.productAmountCont{
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+    margin-bottom: 15%;
+
+
+
+
+}
+.addfavorites,.removefavorites{ 
+    margin: 5px;
+
+
+}
+/* .removefavorites{
+
+}
+.productAmount{
+}  */
+.productPrice{
+    font-size: 30px;
+    font-weight: 400;
+}
+
+hr{
+        border: none;
+        background-color: orange;
+        height: 1px;
+}
+.bottomSummary{
+    flex:1;
+    padding-left: 10%;
+    border:lightgray solid 1px;
+    border-radius: 10px;
+    padding: 20px;
+    height: 50vh;
+    }
+.sumTitle{
+    font-weight: 200;
+}
+.sumItem{
+    margin: 20px 0px;
+    display: flex;
+    justify-content: space-between;
+}
+
+   
+

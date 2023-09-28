@@ -1,7 +1,8 @@
 /* eslint-disable react/prop-types */
 import { Link } from "react-router-dom"
-import { addProduct } from "../../redux/cartRedux";
+import { addFav } from "../../redux/favRedux";
 import { useDispatch } from "react-redux";
+import {toast} from "react-toastify"
 
 import './merchItem.css'
 // import AddOutlinedIcon from '@mui/icons-material/AddOutlined';
@@ -10,30 +11,35 @@ import './merchItem.css'
 const MerchItem = ({item}) => {
   const dispatch = useDispatch();
   
-  const addToCart =(item, quantity)=>{
-    dispatch(addProduct({...item, quantity}));
+  const addToFav =(item, quantity)=>{
+    dispatch(addFav({...item, quantity}));
+    toast.success("item added to favorites")
+
+    
   };
   return (
-    <div className='itemCont'>
+    <div className="itemCont">
       <Link to={`/product/${item.product_id}`}>
-<img src={item.img} className="card-img" />
-</Link>
-  <div className="card-info">
-    {/* <p className="text-title">{item.title} </p> */}
-    {/* <p className="text-body">{item.description}</p> */}
-  </div>
-  <div className="card-footer">
-  <span className="text-title">${item.price}</span>
-  <div className="card-button">
-    <svg className="svg-icon" viewBox="0 0 20 20" onClick={()=> addToCart(item)}>
-      <path d="M17.72,5.011H8.026c-0.271,0-0.49,0.219-0.49,0.489c0,0.271,0.219,0.489,0.49,0.489h8.962l-1.979,4.773H6.763L4.935,5.343C4.926,5.316,4.897,5.309,4.884,5.286c-0.011-0.024,0-0.051-0.017-0.074C4.833,5.166,4.025,4.081,2.33,3.908C2.068,3.883,1.822,4.075,1.795,4.344C1.767,4.612,1.962,4.853,2.231,4.88c1.143,0.118,1.703,0.738,1.808,0.866l1.91,5.661c0.066,0.199,0.252,0.333,0.463,0.333h8.924c0.116,0,0.22-0.053,0.308-0.128c0.027-0.023,0.042-0.048,0.063-0.076c0.026-0.034,0.063-0.058,0.08-0.099l2.384-5.75c0.062-0.151,0.046-0.323-0.045-0.458C18.036,5.092,17.883,5.011,17.72,5.011z"></path>
-      <path d="M8.251,12.386c-1.023,0-1.856,0.834-1.856,1.856s0.833,1.853,1.856,1.853c1.021,0,1.853-0.83,1.853-1.853S9.273,12.386,8.251,12.386z M8.251,15.116c-0.484,0-0.877-0.393-0.877-0.874c0-0.484,0.394-0.878,0.877-0.878c0.482,0,0.875,0.394,0.875,0.878C9.126,14.724,8.733,15.116,8.251,15.116z"></path>
-      <path d="M13.972,12.386c-1.022,0-1.855,0.834-1.855,1.856s0.833,1.853,1.855,1.853s1.854-0.83,1.854-1.853S14.994,12.386,13.972,12.386z M13.972,15.116c-0.484,0-0.878-0.393-0.878-0.874c0-0.484,0.394-0.878,0.878-0.878c0.482,0,0.875,0.394,0.875,0.878C14.847,14.724,14.454,15.116,13.972,15.116z"></path>
-    </svg>
-  </div>
-</div></div>
-   
-  )
+        <img src={item.img} className="card-img" />
+      </Link>
+      <div className="card-info">
+        {/* <p className="text-title">{item.title} </p> */}
+        {/* <p className="text-body">{item.description}</p> */}
+      </div>
+      <div className="card-footer">
+        <span className="text-title">${item.price}</span>
+        <div className="card-button">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 512 512"
+            onClick={() => addToFav(item) }
+          >
+            <path d="M225.8 468.2l-2.5-2.3L48.1 303.2C17.4 274.7 0 234.7 0 192.8v-3.3c0-70.4 50-130.8 119.2-144C158.6 37.9 198.9 47 231 69.6c9 6.4 17.4 13.8 25 22.3c4.2-4.8 8.7-9.2 13.5-13.3c3.7-3.2 7.5-6.2 11.5-9c0 0 0 0 0 0C313.1 47 353.4 37.9 392.8 45.4C462 58.6 512 119.1 512 189.5v3.3c0 41.9-17.4 81.9-48.1 110.4L288.7 465.9l-2.5 2.3c-8.2 7.6-19 11.9-30.2 11.9s-22-4.2-30.2-11.9zM239.1 145c-.4-.3-.7-.7-1-1.1l-17.8-20c0 0-.1-.1-.1-.1c0 0 0 0 0 0c-23.1-25.9-58-37.7-92-31.2C81.6 101.5 48 142.1 48 189.5v3.3c0 28.5 11.9 55.8 32.8 75.2L256 430.7 431.2 268c20.9-19.4 32.8-46.7 32.8-75.2v-3.3c0-47.3-33.6-88-80.1-96.9c-34-6.5-69 5.4-92 31.2c0 0 0 0-.1 .1s0 0-.1 .1l-17.8 20c-.3 .4-.7 .7-1 1.1c-4.5 4.5-10.6 7-16.9 7s-12.4-2.5-16.9-7z" />
+          </svg>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default MerchItem
