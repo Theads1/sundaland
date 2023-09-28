@@ -30,7 +30,7 @@ const Cart = (product) => {
                         <Link to={`/favorites`}><span className="topTexts">Favorites</span></Link>
 
                     </div>
-                    <button className="topBtnb">Checkout Now</button>
+                   <Link to={`/error`}> <button className="topBtnb">Checkout Now</button></Link>
                     </div>
                 <div className="cartBottom">
                     <div className="bottomInfo">
@@ -87,7 +87,7 @@ const Cart = (product) => {
                             <span className="sumItemTextA" style={{ fontWeight: 'bolder' }}> Total</span>
                                 <span className="sumItemPrice">{Math.ceil(cart.total).toFixed(2)}</span>
                         </div>
-                        <button className="topBtnb">Checkout Now</button>
+                        <Link to={`/error`}><button className="topBtnb">Checkout Now</button></Link>
 
 
                     </div>
