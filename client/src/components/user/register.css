@@ -13,7 +13,7 @@
 
 
 .regTitle{
-    font-size: 30px;
+    font-size: 2.5em;
     font-weight: 600;
     /* padding-left: 14%; */
 
@@ -22,8 +22,8 @@
 .form {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    max-width: 350px;
+    gap: 1rem;
+    max-width: 22rem;
     background-color: #fff;
     border-radius: 20px;
     align-content: center;
@@ -53,7 +53,7 @@
   .flex {
     display: flex;
     width: 100%;
-    gap: 6px;
+    gap: .75rem;
   }
   
   .form label {
@@ -63,7 +63,7 @@
   }
   input{
     border-radius: 10px;
-   font-size: 15px;
+   font-size: 2em;
   }
   
   
@@ -71,10 +71,10 @@
     border: none;
     outline: none;
     background-color: rgb(248, 115, 7);
-    padding: 10px;
+    padding: 1rem;
     border-radius: 10px;
     color: #fff;
-    font-size: 16px;
+    font-size: 1.6em;
     transform: .3s ease;
   }
   

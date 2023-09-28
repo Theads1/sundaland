@@ -51,12 +51,17 @@ const Cart = (product) => {
                             <div className="cartPrice">
                                 <span className="productAmountCont">
                                     <i className="removeCart fa fa-minus" onClick={()=> handleQuantity("dec")}> </i>
-                                    <div className="productAmount"> {product.quantity + quantity} </div>
+                                    <div className="productAmount"> {product.quantity} </div>
                                     <i className="addCart fa fa-plus" onClick={()=> handleQuantity("inc")}> </i>
                                     
                                 </span>
                                 <div className="productPrice"> {product.price*product.quantity} </div>
+                                <label htmlFor="">
+                                    Remove
+                                <input type="checkbox"/>
+                                </label>
                             </div>
+
                         </div>))}
                         <hr />
                     </div>
@@ -68,11 +73,15 @@ const Cart = (product) => {
                             Order Summary</h1>
                         <div className="sumItem">
                             <span className="sumItemtext"> Subtotal</span>
-                                <span className="sumItemPrice">{Math.round(cart.total).toFixed(2)}</span>
+                                <span className="sumItemPrice">{Math.ceil(cart.total).toFixed(2)}</span>
                         </div>
                         <div className="sumItem">
                             <span className="sumItemtext"> Est. Shipping</span>
                                 <span className="sumItemPrice">Free</span>
+                        </div>
+                        <div className="sumItem">
+                            <span className="sumItemtext"> Taxes</span>
+                                <span className="sumItemPrice">included in total</span>
                         </div>
                         <div className="sumItem">
                             <span className="sumItemtext"> Coupons</span>
@@ -80,7 +89,7 @@ const Cart = (product) => {
                         </div>
                         <div className="sumItem" style={{ fontSize: '25px' }}>
                             <span className="sumItemTextA" style={{ fontWeight: 'bolder' }}> Total</span>
-                                <span className="sumItemPrice">{Math.round(cart.total).toFixed(2)}</span>
+                                <span className="sumItemPrice">{Math.ceil(cart.total).toFixed(2)}</span>
                         </div>
                         <button className="topBtnb">Checkout Now</button>
 

@@ -1,6 +1,7 @@
 import { Fragment, useState, } from "react"
 import { Link,} from 'react-router-dom'
 import "./sidebar.css"
+import {toast} from "react-toastify"
 import AlternateEmailOutlinedIcon from '@mui/icons-material/AlternateEmailOutlined';
 import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
 import InstagramIcon from '@mui/icons-material/Instagram';
@@ -16,6 +17,10 @@ const Sidebar = () => {
 //   const desc =()=>{
 //     toys.sort((a, b) => toys.price(b) - toys.price(a));
 //   }
+
+const handleError = () => {
+    toast.error("sorry, under construction")
+}
 
 
   return (
@@ -60,24 +65,24 @@ const Sidebar = () => {
         </span>
         <span className="sideCenter">
             <p> Price </p>
-        <input defaultValue="asc" name="price" id="asc" type="radio" />
+        <input defaultValue="asc" name="price" id="asc" type="radio" onChange={handleError} />
          <label htmlFor="asc"> High-Low</label>
          <br/>
-          <input defaultValue="desc" name="price" id="desc" type="radio" />
+          <input defaultValue="desc" name="price" id="desc" type="radio" onChange={handleError}/>
            <label htmlFor="star4">Low-High</label>
         </span>
         <span className="sideCenter">
           <p>Rating</p>
           <div className="rating">
-          <input defaultValue="5" name="rate" id="star5" type="radio"/>
+          <input defaultValue="5" name="rate" id="star5" type="radio" onChange={handleError}/>
          <label htmlFor="star5"></label>
-          <input defaultValue="4" name="rate" id="star4" type="radio"/>
+          <input defaultValue="4" name="rate" id="star4" type="radio" onChange={handleError}/>
            <label htmlFor="star4"></label>
-         <input defaultValue="3" name="rate" id="star3" type="radio"/>
+         <input defaultValue="3" name="rate" id="star3" type="radio" onChange={handleError}/>
          <label htmlFor="star3"></label>
-          <input defaultValue="2" name="rate" id="star2" type="radio"/>
+          <input defaultValue="2" name="rate" id="star2" type="radio" onChange={handleError}/>
           <label htmlFor="star2"></label>
-          <input defaultValue="1" name="rate" id="star1" type="radio"/>
+          <input defaultValue="1" name="rate" id="star1" type="radio" onChange={handleError}/>
          <label htmlFor="star1"></label>
         </div>
         </span>
