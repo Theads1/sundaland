@@ -20,7 +20,7 @@ const handleSubmit = async (e)=>{
   e.preventDefault();
   const body = {email, name, password}
   try {
-    const response = await fetch('http://localhost:5000/auth/register', { 
+    const response = await fetch(`${import.meta.env.VITE_BASE_URL}/auth/register`, { 
     method:"POST",
     headers:{"Content-Type" : "application/json",
     'Access-Control-Allow-Origin':'*',

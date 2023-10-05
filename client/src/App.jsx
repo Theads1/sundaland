@@ -23,7 +23,7 @@ function App() {
 
   async function authorize(){
     try {
-      const response = await fetch ('http://localhost:5000/auth/verify', {
+      const response = await fetch (`${import.meta.env.VITE_BASE_URL}/auth/verify`, {
         method:'GET',
         headers:{token: localStorage.token}
       });

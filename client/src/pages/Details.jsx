@@ -19,7 +19,7 @@ const dispatch = useDispatch();
 
 const getDetails = async ()=>{
   try {
-    const response = await fetch("http://localhost:5000/api/find/"+id);
+    const response = await fetch(`${import.meta.env.VITE_BASE_URL}/api/find/`+id);
     const data = await response.json();
     setDetail(data.rows[0]);
       } catch (error) {

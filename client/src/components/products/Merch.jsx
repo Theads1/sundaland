@@ -37,7 +37,7 @@ const Merch = () => {
   //by category api
   const getToys = async()=>{
     try {
-      const response = await fetch(!cat?`${import.meta.env.VITE_BASE_URL}/api/api/merch`:`${import.meta.env.VITE_BASE_URL}/apiapi/merch?category=${cat}`)
+      const response = await fetch(!cat? `${import.meta.env.VITE_BASE_URL}/api/merch`:`${import.meta.env.VITE_BASE_URL}/api/merch?category=${cat}`)
       const data = await response.json();
       setToys(data.rows);
       
