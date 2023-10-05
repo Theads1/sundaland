@@ -21,7 +21,7 @@ const Merch = () => {
   //search bar api
 
   const getProducts = async () =>{
-    const response = await fetch(`http://localhost:5000/api/merch/search?q=${search}`)
+    const response = await fetch(`${import.meta.env.VITE_BASE_URL}/api/merch/search?q=${search}`)
     const products = await response.json();
     setData(products)
   }
@@ -37,7 +37,7 @@ const Merch = () => {
   //by category api
   const getToys = async()=>{
     try {
-      const response = await fetch(!cat?`http://localhost:5000/api/merch`:`http://localhost:5000/api/merch?category=${cat}`)
+      const response = await fetch(!cat?`${import.meta.env.VITE_BASE_URL}api/merch`:`${import.meta.env.VITE_BASE_URL}api/merch?category=${cat}`)
       const data = await response.json();
       setToys(data.rows);
       
